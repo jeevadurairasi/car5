@@ -10,6 +10,9 @@ h2 {
   color: #343a40;
   margin-bottom: 10px;
 }
+.hello{
+    text-align: center;
+}
 
 p {
   color: #6c757d;
@@ -153,4 +156,3 @@ button.btn:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
-

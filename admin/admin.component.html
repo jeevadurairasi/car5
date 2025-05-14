@@ -11,10 +11,10 @@
 
 <div class="page-content">
   <div *ngIf="currentPage === 'manage'">
-    <h3>Manage Admin</h3>
+    <h3 class="hello">Manage Admin</h3>
     <div class="row">
       <div class="car-card" *ngFor="let car of cars">
-        <img [src]="car.image" alt="Car image">
+        <img style="width: 520px; height: 300px;" [src]="car.image" alt="Car image">
         <div class="caption">
           <p><strong>Details:</strong> {{ car.details }}</p>
           <p><strong>Gear Type:</strong> {{ car.gearType }}</p>
@@ -33,6 +33,22 @@
   <div *ngIf="currentPage === 'viewRentals'">
     <h3>View Rentals</h3>
     <p>Here you can view all rental details and ongoing bookings.</p>
+    <table class="rentals-table">
+        <thead>
+        <tr>
+            <th>Car Name</th>
+            <th>Rental Date</th>
+            <th>Return Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let rental of previousRentals">
+            <td>{{ rental.carName }}</td>
+            <td>{{ rental.rentalDate }}</td>
+            <td>{{ rental.returnDate }}</td>
+        </tr>
+        </tbody>
+    </table>
   </div>
 
   <div *ngIf="currentPage === 'userHistory'">

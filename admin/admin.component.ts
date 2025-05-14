@@ -52,4 +52,8 @@ export class AdminComponent  {
   deleteCar(carName: string): void {
     alert(`Delete functionality for ${carName} is not implemented yet.`);
   }
+   previousRentals = [
+    { carName: 'Car 1', rentalDate: '2025-05-01', returnDate: '2025-05-05' },
+    { carName: 'Car 2', rentalDate: '2025-04-15', returnDate: '2025-04-20' }
+  ];
 }
