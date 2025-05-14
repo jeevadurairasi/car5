@@ -1,0 +1,42 @@
+<div class="admin-container">
+  <h2>Admin Dashboard</h2>
+  <p>Welcome, Admin! Choose an option below:</p>
+
+  <div class="button-container">
+    <button (click)="setPage('manage')">Manage Admin</button>
+    <button (click)="setPage('viewRentals')">View Rentals</button>
+    <button (click)="setPage('userHistory')">User History</button>
+  </div>
+</div>
+
+<div class="page-content">
+  <div *ngIf="currentPage === 'manage'">
+    <h3>Manage Admin</h3>
+    <div class="row">
+      <div class="car-card" *ngFor="let car of cars">
+        <img [src]="car.image" alt="Car image">
+        <div class="caption">
+          <p><strong>Details:</strong> {{ car.details }}</p>
+          <p><strong>Gear Type:</strong> {{ car.gearType }}</p>
+          <p><strong>Per Day Cost:</strong> {{ car.perDayCost }}</p>
+          <p><strong>Discount:</strong> {{ car.discount }}%</p>
+          <p><strong>Price Per Km:</strong> {{ car.pricePerKm }}</p>
+        </div>
+        <div class="button-container">
+          <button (click)="updateCar(car.name)">Update</button>
+          <button class="delete" (click)="deleteCar(car.name)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="currentPage === 'viewRentals'">
+    <h3>View Rentals</h3>
+    <p>Here you can view all rental details and ongoing bookings.</p>
+  </div>
+
+  <div *ngIf="currentPage === 'userHistory'">
+    <h3>User History</h3>
+    <p>Here you can view the history of users and their activities.</p>
+  </div>
+</div>
